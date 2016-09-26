@@ -29,6 +29,7 @@ features[field_base][] = field_srl_principal_investigator
 features[field_base][] = field_status
 features[field_group][] = group_award_date|node|seed_research_project|form
 features[field_instance][] = field_collection_item-field_research_results-field_description
+features[field_instance][] = field_collection_item-field_research_results-field_file_single_public
 features[field_instance][] = field_collection_item-field_research_results-field_link_single
 features[field_instance][] = field_collection_item-field_srl_co_investigators-field_faculty_or_other
 features[field_instance][] = field_collection_item-field_srl_co_investigators-field_link_single

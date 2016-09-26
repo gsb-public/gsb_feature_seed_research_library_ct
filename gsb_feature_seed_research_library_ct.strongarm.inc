@@ -30,6 +30,9 @@ function gsb_feature_seed_research_library_ct_strongarm() {
         'redirect' => array(
           'weight' => '9',
         ),
+        'workbench_access' => array(
+          'weight' => '0',
+        ),
       ),
       'display' => array(),
     ),
