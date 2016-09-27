@@ -12,7 +12,7 @@ include_once 'gsb_feature_seed_research_library_ct.features.inc';
 function gsb_feature_seed_research_library_ct_form_seed_research_project_node_form_alter(&$form, &$form_state) {
 
   $language = $form['language']['#value'];
-
+ //principal investigator
   $form['field_srl_principal_investigator'][$language][0]['field_person_fac_single_ref']['#states'] = array(
     'visible' => array(
       ':input[name="field_srl_principal_investigator[' . $language . '][0][field_faculty_or_other][' . $language . ']"]' => array(
@@ -20,17 +20,17 @@ function gsb_feature_seed_research_library_ct_form_seed_research_project_node_fo
       ),
     ),
   );
-  $form['field_srl_co_investigators'][$language][0]['field_other_name']['#states'] = array(
+  $form['field_srl_principal_investigator'][$language][0]['field_other_name']['#states'] = array(
     'visible' => array(
-      ':input[name="field_srl_co_investigators[' . $language . '][0][field_faculty_or_other][' . $language . ']"]' => array(
+      ':input[name="field_srl_principal_investigator[' . $language . '][0][field_faculty_or_other][' . $language . ']"]' => array(
         array('value' => 'Other'),
       ),
     ),
   );
-
   // remove "n/a" as an option for the fac_or_other
   unset($form['field_srl_principal_investigator'][$language][0]['field_faculty_or_other'][$language]['#options']['_none']);
 
+  //co-investigator
   foreach ($form['field_srl_co_investigators'][$language] as $index => $data) {
     if (is_integer($index)) {
       $form['field_srl_co_investigators'][$language][$index]['field_person_fac_single_ref']['#states'] = array(
