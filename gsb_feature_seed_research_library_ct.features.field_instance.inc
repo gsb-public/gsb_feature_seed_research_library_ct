@@ -207,7 +207,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_link_single',
-    'label' => 'URL',
+    'label' => 'Title',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -231,10 +231,10 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
       ),
       'rel_remove' => 'default',
       'title' => 'optional',
-      'title_label_use_field_label' => 0,
+      'title_label_use_field_label' => 1,
       'title_maxlength' => 128,
       'title_value' => '',
-      'url' => 0,
+      'url' => 'optional',
       'user_register_form' => FALSE,
       'validate_url' => 1,
     ),
@@ -254,7 +254,11 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'bundle' => 'field_srl_co_investigators',
     'custom_add_another' => '',
     'custom_remove' => '',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'UseEntityReference',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -328,7 +332,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
         'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',
-        'target' => 'default',
+        'target' => 'user',
         'title' => '',
       ),
       'custom_add_another' => '',
@@ -342,11 +346,11 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
         'insert_plugin' => '',
       ),
       'rel_remove' => 'default',
-      'title' => 'optional',
+      'title' => 'none',
       'title_label_use_field_label' => 0,
       'title_maxlength' => 128,
       'title_value' => '',
-      'url' => 0,
+      'url' => 'optional',
       'user_register_form' => FALSE,
       'validate_url' => 1,
     ),
@@ -558,7 +562,11 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'bundle' => 'field_srl_principal_investigator',
     'custom_add_another' => '',
     'custom_remove' => '',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'UseEntityReference',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -632,7 +640,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
         'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',
-        'target' => 'default',
+        'target' => 'user',
         'title' => '',
       ),
       'custom_add_another' => '',
@@ -646,11 +654,11 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
         'insert_plugin' => '',
       ),
       'rel_remove' => 'default',
-      'title' => 'optional',
+      'title' => 'none',
       'title_label_use_field_label' => 0,
       'title_maxlength' => 128,
       'title_value' => '',
-      'url' => 0,
+      'url' => 'optional',
       'user_register_form' => FALSE,
       'validate_url' => 1,
     ),
@@ -867,7 +875,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
@@ -966,7 +974,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 8,
     ),
     'workbench_access_field' => 0,
   );
@@ -981,7 +989,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(
           'conditions' => array(),
@@ -1012,7 +1020,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 5,
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -1027,7 +1035,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'list',
         'settings' => array(
           'conditions' => array(),
@@ -1074,13 +1082,13 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1171,7 +1179,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -1198,7 +1206,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 11,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1222,7 +1230,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 58,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -1238,7 +1246,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
@@ -1249,7 +1257,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 7,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1273,7 +1281,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 2,
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -1289,7 +1297,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
@@ -1300,7 +1308,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1309,11 +1317,11 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
-    'ds_extras_field_template' => '',
+    'ds_extras_field_template' => 'theme_field',
     'entity_type' => 'node',
     'field_name' => 'field_srl_principal_investigator',
     'label' => 'Principal Investigator',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -1324,7 +1332,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 1,
+      'weight' => 2,
     ),
     'workbench_access_field' => 0,
   );
@@ -1339,7 +1347,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(
           'conditions' => array(),
@@ -1377,7 +1385,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
         'checkall' => FALSE,
       ),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -1391,7 +1399,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'date',
         'settings' => array(
           'conditions' => array(),
@@ -1464,6 +1472,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
   t('Stanford School or Department');
   t('Stanford School or Department ');
   t('Status');
+  t('Title');
   t('URL');
   t('Year');
 

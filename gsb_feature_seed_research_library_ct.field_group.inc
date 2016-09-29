@@ -21,7 +21,7 @@ function gsb_feature_seed_research_library_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Award Date',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_month',
       1 => 'field_year',
