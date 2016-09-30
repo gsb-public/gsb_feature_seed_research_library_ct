@@ -1101,7 +1101,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_research_locations',
     'label' => 'Research Location(s)',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(

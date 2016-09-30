@@ -33,7 +33,7 @@ function gsb_feature_seed_research_library_ct_form_seed_research_project_node_fo
     ),
     'required' => array(
       ':input[name="field_srl_principal_investigator[' . $language . '][0][field_faculty_or_other][' . $language . ']"]' => array(
-        array('value' => 'UseEntityReference'),
+        array('value' => 'Other'),
       ),
     ),
   );
@@ -101,4 +101,21 @@ function gsb_feature_seed_research_library_ct_form_seed_research_project_node_fo
       );
     }
   }
+  $form['#validate'][] = 'gsb_feature_seed_research_library_ct_form_seed_research_project_node_form_validate';
+}
+
+function gsb_feature_seed_research_library_ct_form_seed_research_project_node_form_validate(&$form, &$form_state) {
+  $language = $form['language']['#value'];
+  $values = $form_state['values'];
+  if ($values['field_srl_principal_investigator'][$language][0]['field_faculty_or_other'][$language][0]['value'] == 'UseEntityReference') {
+    if (empty($form_state['values']['field_srl_principal_investigator'][ $language ][0]['field_person_fac_single_ref'][$language ][0]['target_id'])) {
+      form_set_error('field_srl_principal_investigator][' . $language . '][0][field_person_fac_single_ref', t('Faculty Name is required '));
+    }
+  }
+  if ($values['field_srl_principal_investigator'][$language][0]['field_faculty_or_other'][$language][0]['value'] == 'Other')  {
+      if (empty($values['field_srl_principal_investigator'][$language][0]['field_other_name'][$language][0]['value'])) {
+      form_set_error('field_srl_principal_investigator][' . $language . '][0][field_other_name', t('Name of Principal investigator is required '));
+      }
+  }
+
 }
