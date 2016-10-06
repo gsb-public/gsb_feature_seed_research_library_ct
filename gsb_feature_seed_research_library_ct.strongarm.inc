@@ -170,7 +170,7 @@ function gsb_feature_seed_research_library_ct_strongarm() {
           'weight' => '12',
         ),
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'path' => array(
           'weight' => '10',
@@ -179,7 +179,7 @@ function gsb_feature_seed_research_library_ct_strongarm() {
           'weight' => '11',
         ),
         'workbench_access' => array(
-          'weight' => '1',
+          'weight' => '0',
         ),
       ),
       'display' => array(),
