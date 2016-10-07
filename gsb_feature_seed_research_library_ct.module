@@ -64,19 +64,9 @@ function gsb_feature_seed_research_library_ct_form_seed_research_project_node_fo
             array('value' => 'UseEntityReference'),
           ),
         ),
-        'required' => array(
-          ':input[name="field_srl_co_investigators[' . $language . '][' . $index . '][field_faculty_or_other][' . $language . ']"]' => array(
-            array('value' => 'UseEntityReference'),
-          ),
-        ),
       );
       $form['field_srl_co_investigators'][$language][$index]['field_other_name']['#states'] = array(
         'visible' => array(
-          ':input[name="field_srl_co_investigators[' . $language . '][' . $index . '][field_faculty_or_other][' . $language . ']"]' => array(
-            array('value' => 'Other'),
-          ),
-        ),
-        'required' => array(
           ':input[name="field_srl_co_investigators[' . $language . '][' . $index . '][field_faculty_or_other][' . $language . ']"]' => array(
             array('value' => 'Other'),
           ),
