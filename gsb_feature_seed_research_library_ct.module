@@ -47,13 +47,6 @@ function gsb_feature_seed_research_library_ct_form_seed_research_project_node_fo
       ),
     ),
   );
-  $form['field_srl_principal_investigator'][$language][0]['field_school_department']['#states'] = array(
-    'visible' => array(
-      ':input[name="field_srl_principal_investigator[' . $language . '][0][field_faculty_or_other][' . $language . ']"]' => array(
-        array('value' => 'Other'),
-      ),
-    ),
-  );
 
   //co-investigator
   foreach ($form['field_srl_co_investigators'][$language] as $index => $data) {
@@ -76,13 +69,6 @@ function gsb_feature_seed_research_library_ct_form_seed_research_project_node_fo
       unset($form['field_srl_co_investigators'][$language][$index]['field_faculty_or_other'][$language]['#options']['_none']);
 
       $form['field_srl_co_investigators'][$language][$index]['field_link_single']['#states'] = array(
-        'visible' => array(
-          ':input[name="field_srl_co_investigators[' . $language . '][' . $index . '][field_faculty_or_other][' . $language . ']"]' => array(
-            array('value' => 'Other'),
-          ),
-        ),
-      );
-      $form['field_srl_co_investigators'][$language][$index]['field_school_department']['#states'] = array(
         'visible' => array(
           ':input[name="field_srl_co_investigators[' . $language . '][' . $index . '][field_faculty_or_other][' . $language . ']"]' => array(
             array('value' => 'Other'),

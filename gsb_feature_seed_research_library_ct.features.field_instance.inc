@@ -539,7 +539,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_school_department',
-    'label' => 'Stanford School or Department ',
+    'label' => 'School or Department ',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -847,7 +847,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_school_department',
-    'label' => 'Stanford School or Department',
+    'label' => 'School or Department',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -1468,9 +1468,9 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
   t('Principal Investigator');
   t('Research Location(s)');
   t('Research Results');
+  t('School or Department');
+  t('School or Department ');
   t('Select Type');
-  t('Stanford School or Department');
-  t('Stanford School or Department ');
   t('Status');
   t('Title');
   t('URL');
