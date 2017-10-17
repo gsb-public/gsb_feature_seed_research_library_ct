@@ -128,11 +128,21 @@ function gsb_feature_seed_research_library_ct_node_presave($node) {
     // get the entity wrapper for the node
     $ewrap_seed_research = entity_metadata_wrapper('node', $node);
 
-    // get the authors info
+    // get the principal investigator info
     $srl_principal_investigator_fc = $ewrap_seed_research->field_srl_principal_investigator->value();
 
+    // check if select type is not other
     if ($srl_principal_investigator_fc->field_faculty_or_other['und'][0]['value'] != 'Other'){
       $srl_principal_investigator_fc->field_school_department['und'][0]['tid'] = $tid;
+    }
+
+    // get the co investigators info
+    $srl_co_investigators_fc = $ewrap_seed_research->field_srl_co_investigators->value();
+    foreach ($srl_co_investigators_fc as $index => $data) {
+      if ($srl_co_investigators_fc->field_faculty_or_other['und'][0]['value'] != 'Other'){
+        $data->field_school_department['und'][0]['tid'] = $tid;
+        $node->field_srl_co_investigators['und'][$index]['field_school_department'] = $data->field_school_department;
+      }
     }
   }
 }
