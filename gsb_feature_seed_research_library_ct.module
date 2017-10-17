@@ -37,6 +37,20 @@ function gsb_feature_seed_research_library_ct_form_seed_research_project_node_fo
       ),
     ),
   );
+  //field_school_department
+  $form['field_srl_principal_investigator'][$language][0]['field_school_department']['#states'] = array(
+    'visible' => array(
+      ':input[name="field_srl_principal_investigator[' . $language . '][0][field_faculty_or_other][' . $language . ']"]' => array(
+        array('value' => 'Other'),
+      ),
+    ),
+    'required' => array(
+      ':input[name="field_srl_principal_investigator[' . $language . '][0][field_faculty_or_other][' . $language . ']"]' => array(
+        array('value' => 'Other'),
+      ),
+    ),
+  );
+
   // remove "n/a" as an option for the fac_or_other
   unset($form['field_srl_principal_investigator'][$language][0]['field_faculty_or_other'][$language]['#options']['_none']);
 
@@ -59,6 +73,13 @@ function gsb_feature_seed_research_library_ct_form_seed_research_project_node_fo
         ),
       );
       $form['field_srl_co_investigators'][$language][$index]['field_other_name']['#states'] = array(
+        'visible' => array(
+          ':input[name="field_srl_co_investigators[' . $language . '][' . $index . '][field_faculty_or_other][' . $language . ']"]' => array(
+            array('value' => 'Other'),
+          ),
+        ),
+      );
+      $form['field_srl_co_investigators'][$language][$index]['field_school_department']['#states'] = array(
         'visible' => array(
           ':input[name="field_srl_co_investigators[' . $language . '][' . $index . '][field_faculty_or_other][' . $language . ']"]' => array(
             array('value' => 'Other'),
@@ -94,4 +115,24 @@ function gsb_feature_seed_research_library_ct_form_seed_research_project_node_fo
       }
   }
 
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function gsb_feature_seed_research_library_ct_node_presave($node) {
+  $language = $node->language;
+  $tid = 37311; // School Department default value - Stanford Graduate School of Business
+
+  if ($node->type == 'seed_research_project') {
+    // get the entity wrapper for the node
+    $ewrap_seed_research = entity_metadata_wrapper('node', $node);
+
+    // get the authors info
+    $srl_principal_investigator_fc = $ewrap_seed_research->field_srl_principal_investigator->value();
+
+    if ($srl_principal_investigator_fc->field_faculty_or_other['und'][0]['value'] != 'Other'){
+      $srl_principal_investigator_fc->field_school_department['und'][0]['tid'] = $tid;
+    }
+  }
 }
