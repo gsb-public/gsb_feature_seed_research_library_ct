@@ -13,6 +13,27 @@ function gsb_feature_seed_research_library_ct_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_seed_research_project';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_seed_research_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_seed_research_project';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_seed_research_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_seed_research_project';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_seed_research_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__seed_research_project';
   $strongarm->value = array(
     'view_modes' => array(
@@ -226,6 +247,111 @@ function gsb_feature_seed_research_library_ct_strongarm() {
   $strongarm->name = 'node_submitted_seed_research_project';
   $strongarm->value = 1;
   $export['node_submitted_seed_research_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_defaults_node_seed_research_project';
+  $strongarm->value = array(
+    'status' => 1,
+    'help' => '',
+    'view modes' => array(
+      'page_manager' => array(
+        'status' => 1,
+        'substitute' => '',
+        'default' => 1,
+        'choice' => 1,
+      ),
+      'default' => array(
+        'status' => 0,
+        'substitute' => 0,
+        'default' => 0,
+        'choice' => 0,
+      ),
+      'teaser' => array(
+        'status' => 0,
+        'substitute' => 0,
+        'default' => 0,
+        'choice' => 0,
+      ),
+      'principal_investigator' => array(
+        'status' => 0,
+        'substitute' => 0,
+        'default' => 0,
+        'choice' => 0,
+      ),
+    ),
+  );
+  $export['panelizer_defaults_node_seed_research_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_node:seed_research_project_allowed_layouts';
+  $strongarm->value = 'O:22:"panels_allowed_layouts":4:{s:9:"allow_new";b:1;s:11:"module_name";s:36:"panelizer_node:seed_research_project";s:23:"allowed_layout_settings";a:22:{s:8:"flexible";b:1;s:14:"twocol_stacked";b:1;s:13:"twocol_bricks";b:1;s:6:"twocol";b:1;s:25:"threecol_33_34_33_stacked";b:1;s:17:"threecol_33_34_33";b:1;s:25:"threecol_25_50_25_stacked";b:1;s:17:"threecol_25_50_25";b:1;s:6:"onecol";b:1;s:26:"minipanel-two-columns-wide";b:1;s:20:"minipanel-one-column";b:1;s:21:"gsb-standard-page-two";b:1;s:18:"gsb-program-finder";b:1;s:14:"gsb-no-sidebar";b:1;s:29:"gsb-landing-standard-page-one";b:1;s:18:"gsb-landing-events";b:1;s:14:"gsb-insights-c";b:1;s:14:"gsb-insights-b";b:1;s:14:"gsb-insights-a";b:1;s:19:"gsb-full-bleed-page";b:1;s:24:"gsb-full-bleed-home-page";b:1;s:14:"gsb-front-page";b:1;}s:10:"form_state";N;}';
+  $export['panelizer_node:seed_research_project_allowed_layouts'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_node:seed_research_project_allowed_layouts_default';
+  $strongarm->value = 0;
+  $export['panelizer_node:seed_research_project_allowed_layouts_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_node:seed_research_project_allowed_types_default';
+  $strongarm->value = 1;
+  $export['panelizer_node:seed_research_project_allowed_types_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_node:seed_research_project_default';
+  $strongarm->value = array(
+    'token' => 'token',
+    'entity_form_field' => 'entity_form_field',
+    'entity_field' => 'entity_field',
+    'entity_field_extra' => 'entity_field_extra',
+    'custom' => 'custom',
+    'block' => 'block',
+    'entity_view' => 'entity_view',
+    'fieldable_panels_pane' => 'fieldable_panels_pane',
+    'menu_tree' => 'menu_tree',
+    'panels_mini' => 'panels_mini',
+    'views_panes' => 'views_panes',
+    'other' => 'other',
+  );
+  $export['panelizer_node:seed_research_project_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_seed_research_project_pattern';
+  $strongarm->value = 'seed/research/library/[node:title]';
+  $export['pathauto_node_seed_research_project_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_schools_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_schools_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_seed_award_type_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_seed_award_type_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_seed_status_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_seed_status_pattern'] = $strongarm;
 
   return $export;
 }
