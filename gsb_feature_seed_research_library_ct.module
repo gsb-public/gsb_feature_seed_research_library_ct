@@ -181,20 +181,36 @@ function gsb_feature_seed_research_library_ct_entity_view($entity, $type, $view_
     $url = $url['url'];
 
     if ($school_department) {
-      // Add extra field that displays linked school_department.
-      $entity->content['school_department_with_url'] = array(
-        '#theme' => 'link',
-        '#text' => $school_department[0]->name,
-        '#path' => $url,
-        '#prefix' => '',
-        '#suffix' => '',
-        '#options' => array(
-          'attributes' => array(
-            'class' => array('field-name-field-title'),
-            ),
-          'html' => FALSE,
-        ),
-      );
+      if ($url) {
+        // Add extra field that displays linked school_department.
+        $entity->content['school_department_with_url'] = array(
+          '#theme' => 'link',
+          '#text' => $school_department[0]->name,
+          '#path' => $url,
+          '#prefix' => '',
+          '#suffix' => '',
+          '#options' => array(
+            'attributes' => array(
+              'class' => array('field-name-field-school-department'),
+              ),
+            'html' => FALSE,
+          ),
+        );
+      }
+      else
+      {
+        $entity->content['school_department_with_url'] = array(
+          '#markup' => $school_department[0]->name,
+          '#prefix' => '',
+          '#suffix' => '',
+          '#options' => array(
+            'attributes' => array(
+              'class' => array('field-name-field-school-department'),
+              ),
+            'html' => FALSE,
+          ),
+        );
+      }
     }
   }
 }
