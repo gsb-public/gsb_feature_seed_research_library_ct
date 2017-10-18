@@ -30,9 +30,21 @@ function gsb_feature_seed_research_library_ct_panelizer_defaults() {
   $panelizer->contexts = array();
   $panelizer->relationships = array();
   $display = new panels_display();
-  $display->layout = 'flexible';
+  $display->layout = 'gsb-landing-standard-page-one';
   $display->layout_settings = array();
-  $display->panel_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'main' => NULL,
+      'quicklinks' => NULL,
+      'sidebar' => NULL,
+      'fullheader' => NULL,
+      'maintop' => NULL,
+      'mainmiddlefirst' => NULL,
+      'mainmiddlesecond' => NULL,
+      'mainbottom' => NULL,
+    ),
+  );
   $display->cache = array();
   $display->title = '%node:title';
   $display->uuid = '1b752e04-df30-4bb5-afc7-5c9fdcdd62f9';
@@ -42,39 +54,49 @@ function gsb_feature_seed_research_library_ct_panelizer_defaults() {
   $display->panels = array();
   $pane = new stdClass();
   $pane->pid = 'new-5839e009-9264-4e22-bc7b-e39a6b342bcc';
-  $pane->panel = 'center';
+  $pane->panel = 'fullheader';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_srl_principal_investigator';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'inline',
-    'formatter' => 'field_collection_view',
+    'label' => 'above',
+    'formatter' => 'field_collection_fields',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
     'formatter_settings' => array(
       'add' => 'Add',
-      'conditions' => array(),
+      'conditions' => array(
+        0 => array(
+          'condition' => '',
+        ),
+      ),
       'delete' => 'Delete',
-      'description' => TRUE,
+      'description' => 1,
       'edit' => 'Edit',
       'view_mode' => 'full',
+      'translate' => '',
     ),
     'context' => 'panelizer',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
-  $pane->style = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = '5839e009-9264-4e22-bc7b-e39a6b342bcc';
   $display->content['new-5839e009-9264-4e22-bc7b-e39a6b342bcc'] = $pane;
-  $display->panels['center'][0] = 'new-5839e009-9264-4e22-bc7b-e39a6b342bcc';
+  $display->panels['fullheader'][0] = 'new-5839e009-9264-4e22-bc7b-e39a6b342bcc';
   $pane = new stdClass();
   $pane->pid = 'new-35aec136-bea9-4e7f-9a3a-35b0558d011d';
-  $pane->panel = 'center';
+  $pane->panel = 'fullheader';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_srl_co_investigators';
   $pane->shown = TRUE;
@@ -82,31 +104,41 @@ function gsb_feature_seed_research_library_ct_panelizer_defaults() {
   $pane->configuration = array(
     'label' => 'inline',
     'formatter' => 'field_collection_view',
-    'delta_limit' => 0,
+    'delta_limit' => '0',
     'delta_offset' => '0',
-    'delta_reversed' => FALSE,
+    'delta_reversed' => 0,
     'formatter_settings' => array(
-      'add' => 'Add',
-      'conditions' => array(),
-      'delete' => 'Delete',
-      'description' => TRUE,
-      'edit' => 'Edit',
+      'add' => '',
+      'conditions' => array(
+        0 => array(
+          'condition' => '',
+        ),
+      ),
+      'delete' => '',
+      'description' => 1,
+      'edit' => '',
       'view_mode' => 'full',
+      'translate' => '',
     ),
     'context' => 'panelizer',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
-  $pane->style = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '35aec136-bea9-4e7f-9a3a-35b0558d011d';
   $display->content['new-35aec136-bea9-4e7f-9a3a-35b0558d011d'] = $pane;
-  $display->panels['center'][1] = 'new-35aec136-bea9-4e7f-9a3a-35b0558d011d';
+  $display->panels['fullheader'][1] = 'new-35aec136-bea9-4e7f-9a3a-35b0558d011d';
   $pane = new stdClass();
   $pane->pid = 'new-88028512-4a36-4e01-8455-0b101231bab3';
-  $pane->panel = 'center';
+  $pane->panel = 'fullheader';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_month';
   $pane->shown = TRUE;
@@ -123,17 +155,19 @@ function gsb_feature_seed_research_library_ct_panelizer_defaults() {
     'context' => 'panelizer',
   );
   $pane->cache = array();
-  $pane->style = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '88028512-4a36-4e01-8455-0b101231bab3';
   $display->content['new-88028512-4a36-4e01-8455-0b101231bab3'] = $pane;
-  $display->panels['center'][2] = 'new-88028512-4a36-4e01-8455-0b101231bab3';
+  $display->panels['fullheader'][2] = 'new-88028512-4a36-4e01-8455-0b101231bab3';
   $pane = new stdClass();
   $pane->pid = 'new-60a167ad-936b-47e5-914a-c47256460043';
-  $pane->panel = 'center';
+  $pane->panel = 'fullheader';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_year';
   $pane->shown = TRUE;
@@ -157,17 +191,19 @@ function gsb_feature_seed_research_library_ct_panelizer_defaults() {
     'context' => 'panelizer',
   );
   $pane->cache = array();
-  $pane->style = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = '60a167ad-936b-47e5-914a-c47256460043';
   $display->content['new-60a167ad-936b-47e5-914a-c47256460043'] = $pane;
-  $display->panels['center'][3] = 'new-60a167ad-936b-47e5-914a-c47256460043';
+  $display->panels['fullheader'][3] = 'new-60a167ad-936b-47e5-914a-c47256460043';
   $pane = new stdClass();
   $pane->pid = 'new-84f627e7-5246-4cd7-b6a2-f5ecb445a143';
-  $pane->panel = 'center';
+  $pane->panel = 'fullheader';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_award_type';
   $pane->shown = TRUE;
@@ -184,17 +220,19 @@ function gsb_feature_seed_research_library_ct_panelizer_defaults() {
     'context' => 'panelizer',
   );
   $pane->cache = array();
-  $pane->style = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = '84f627e7-5246-4cd7-b6a2-f5ecb445a143';
   $display->content['new-84f627e7-5246-4cd7-b6a2-f5ecb445a143'] = $pane;
-  $display->panels['center'][4] = 'new-84f627e7-5246-4cd7-b6a2-f5ecb445a143';
+  $display->panels['fullheader'][4] = 'new-84f627e7-5246-4cd7-b6a2-f5ecb445a143';
   $pane = new stdClass();
   $pane->pid = 'new-67e7943c-38c4-49af-8e6a-d7f167dbc545';
-  $pane->panel = 'center';
+  $pane->panel = 'fullheader';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_status';
   $pane->shown = TRUE;
@@ -211,17 +249,19 @@ function gsb_feature_seed_research_library_ct_panelizer_defaults() {
     'context' => 'panelizer',
   );
   $pane->cache = array();
-  $pane->style = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = '67e7943c-38c4-49af-8e6a-d7f167dbc545';
   $display->content['new-67e7943c-38c4-49af-8e6a-d7f167dbc545'] = $pane;
-  $display->panels['center'][5] = 'new-67e7943c-38c4-49af-8e6a-d7f167dbc545';
+  $display->panels['fullheader'][5] = 'new-67e7943c-38c4-49af-8e6a-d7f167dbc545';
   $pane = new stdClass();
   $pane->pid = 'new-545629d0-1d47-42ea-896f-77640aa23913';
-  $pane->panel = 'center';
+  $pane->panel = 'fullheader';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_abstract';
   $pane->shown = TRUE;
@@ -238,17 +278,19 @@ function gsb_feature_seed_research_library_ct_panelizer_defaults() {
     'context' => 'panelizer',
   );
   $pane->cache = array();
-  $pane->style = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 6;
   $pane->locks = array();
   $pane->uuid = '545629d0-1d47-42ea-896f-77640aa23913';
   $display->content['new-545629d0-1d47-42ea-896f-77640aa23913'] = $pane;
-  $display->panels['center'][6] = 'new-545629d0-1d47-42ea-896f-77640aa23913';
+  $display->panels['fullheader'][6] = 'new-545629d0-1d47-42ea-896f-77640aa23913';
   $pane = new stdClass();
   $pane->pid = 'new-5e167d78-1029-4814-bc23-a4304ea56c58';
-  $pane->panel = 'center';
+  $pane->panel = 'fullheader';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_research_locations';
   $pane->shown = TRUE;
@@ -265,17 +307,19 @@ function gsb_feature_seed_research_library_ct_panelizer_defaults() {
     'context' => 'panelizer',
   );
   $pane->cache = array();
-  $pane->style = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 7;
   $pane->locks = array();
   $pane->uuid = '5e167d78-1029-4814-bc23-a4304ea56c58';
   $display->content['new-5e167d78-1029-4814-bc23-a4304ea56c58'] = $pane;
-  $display->panels['center'][7] = 'new-5e167d78-1029-4814-bc23-a4304ea56c58';
+  $display->panels['fullheader'][7] = 'new-5e167d78-1029-4814-bc23-a4304ea56c58';
   $pane = new stdClass();
   $pane->pid = 'new-4741bb6d-9204-473c-981a-ed4d6883dc0e';
-  $pane->panel = 'center';
+  $pane->panel = 'fullheader';
   $pane->type = 'entity_field';
   $pane->subtype = 'node:field_research_results';
   $pane->shown = TRUE;
@@ -297,17 +341,19 @@ function gsb_feature_seed_research_library_ct_panelizer_defaults() {
     'context' => 'panelizer',
   );
   $pane->cache = array();
-  $pane->style = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 8;
   $pane->locks = array();
   $pane->uuid = '4741bb6d-9204-473c-981a-ed4d6883dc0e';
   $display->content['new-4741bb6d-9204-473c-981a-ed4d6883dc0e'] = $pane;
-  $display->panels['center'][8] = 'new-4741bb6d-9204-473c-981a-ed4d6883dc0e';
+  $display->panels['fullheader'][8] = 'new-4741bb6d-9204-473c-981a-ed4d6883dc0e';
   $pane = new stdClass();
   $pane->pid = 'new-f89ad9d4-ce17-41df-beb0-8513d8ddee6e';
-  $pane->panel = 'center';
+  $pane->panel = 'fullheader';
   $pane->type = 'node_links';
   $pane->subtype = 'node_links';
   $pane->shown = TRUE;
@@ -321,7 +367,9 @@ function gsb_feature_seed_research_library_ct_panelizer_defaults() {
     'context' => 'panelizer',
   );
   $pane->cache = array();
-  $pane->style = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
   $pane->css = array(
     'css_class' => 'link-wrapper',
   );
@@ -330,7 +378,7 @@ function gsb_feature_seed_research_library_ct_panelizer_defaults() {
   $pane->locks = array();
   $pane->uuid = 'f89ad9d4-ce17-41df-beb0-8513d8ddee6e';
   $display->content['new-f89ad9d4-ce17-41df-beb0-8513d8ddee6e'] = $pane;
-  $display->panels['center'][9] = 'new-f89ad9d4-ce17-41df-beb0-8513d8ddee6e';
+  $display->panels['fullheader'][9] = 'new-f89ad9d4-ce17-41df-beb0-8513d8ddee6e';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-5839e009-9264-4e22-bc7b-e39a6b342bcc';
   $panelizer->display = $display;

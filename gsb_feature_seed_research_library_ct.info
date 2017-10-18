@@ -11,6 +11,7 @@ dependencies[] = field_group
 dependencies[] = file
 dependencies[] = filefield_paths
 dependencies[] = gsb_feature_base_fields
+dependencies[] = gsb_field_formatter
 dependencies[] = hs_taxonomy
 dependencies[] = link
 dependencies[] = list

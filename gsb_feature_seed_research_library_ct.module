@@ -157,6 +157,12 @@ function gsb_feature_seed_research_library_ct_field_extra_fields() {
     'weight' => 1,
   );
 
+  $extra['field_collection_item']['field_srl_co_investigators']['display']['full_name_with_url'] = array(
+    'label' => t('Full Name with URL'),
+    'description' => t('Full Name linked with URL'),
+    'weight' => 1,
+  );
+
   return $extra;
 }
 

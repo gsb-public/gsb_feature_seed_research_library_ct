@@ -38,7 +38,7 @@ function gsb_feature_seed_research_library_ct_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(
       'teaser' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'full' => array(
         'custom_settings' => FALSE,
@@ -184,6 +184,12 @@ function gsb_feature_seed_research_library_ct_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'principal_investigator' => array(
+        'custom_settings' => FALSE,
+      ),
+      'page_featured_programs' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -259,22 +265,10 @@ function gsb_feature_seed_research_library_ct_strongarm() {
       'page_manager' => array(
         'status' => 1,
         'substitute' => '',
-        'default' => 1,
-        'choice' => 1,
+        'default' => 0,
+        'choice' => 0,
       ),
       'default' => array(
-        'status' => 0,
-        'substitute' => 0,
-        'default' => 0,
-        'choice' => 0,
-      ),
-      'teaser' => array(
-        'status' => 0,
-        'substitute' => 0,
-        'default' => 0,
-        'choice' => 0,
-      ),
-      'principal_investigator' => array(
         'status' => 0,
         'substitute' => 0,
         'default' => 0,
