@@ -151,9 +151,9 @@ function gsb_feature_seed_research_library_ct_node_presave($node) {
  * Implements hook_field_extra_fields().
  */
 function gsb_feature_seed_research_library_ct_field_extra_fields() {
-  $extra['field_collection_item']['field_srl_principal_investigator']['display']['school_department_with_url'] = array(
-    'label' => t('School Department with URL'),
-    'description' => t('School Department linked with URL'),
+  $extra['field_collection_item']['field_srl_principal_investigator']['display']['full_name_with_url'] = array(
+    'label' => t('Full Name with URL'),
+    'description' => t('Full Name linked with URL'),
     'weight' => 1,
   );
 
@@ -169,29 +169,29 @@ function gsb_feature_seed_research_library_ct_entity_view($entity, $type, $view_
   if ($type == 'field_collection_item' && $entity->field_name == 'field_srl_principal_investigator') {
     // If this field is not configured for this view mode, skip it.
     $fields = field_extra_fields_get_display($type, $entity->field_name, $view_mode);
-    if (empty($fields['school_department_with_url']['visible'])) {
+    if (empty($fields['full_name_with_url']['visible'])) {
       return;
     }
 
     $wrapper = entity_metadata_wrapper($type, $entity);
 
     // get the school_department & link info
-    $school_department = $wrapper->field_school_department->value();
+    $other_name = $wrapper->field_other_name->value();
     $url = $wrapper->field_link_single->value();
     $url = $url['url'];
 
-    if ($school_department) {
+    if ($other_name) {
       if ($url) {
-        // Add extra field that displays linked school_department.
-        $entity->content['school_department_with_url'] = array(
+        // Add extra field that displays linked other_name.
+        $entity->content['full_name_with_url'] = array(
           '#theme' => 'link',
-          '#text' => $school_department[0]->name,
+          '#text' => $other_name,
           '#path' => $url,
           '#prefix' => '',
           '#suffix' => '',
           '#options' => array(
             'attributes' => array(
-              'class' => array('field-name-field-school-department'),
+              'class' => array('field-name-field-other-name'),
               ),
             'html' => FALSE,
           ),
@@ -199,13 +199,13 @@ function gsb_feature_seed_research_library_ct_entity_view($entity, $type, $view_
       }
       else
       {
-        $entity->content['school_department_with_url'] = array(
-          '#markup' => $school_department[0]->name,
+        $entity->content['full_name_with_url'] = array(
+          '#markup' => $other_name,
           '#prefix' => '',
           '#suffix' => '',
           '#options' => array(
             'attributes' => array(
-              'class' => array('field-name-field-school-department'),
+              'class' => array('field-name-field-other-name'),
               ),
             'html' => FALSE,
           ),
