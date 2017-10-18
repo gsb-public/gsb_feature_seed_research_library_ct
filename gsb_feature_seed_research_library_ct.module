@@ -181,35 +181,23 @@ function gsb_feature_seed_research_library_ct_entity_view($entity, $type, $view_
     $url = $url['url'];
 
     if ($other_name) {
-      if ($url) {
-        // Add extra field that displays linked other_name.
-        $entity->content['full_name_with_url'] = array(
-          '#theme' => 'link',
-          '#text' => $other_name,
-          '#path' => $url,
-          '#prefix' => '',
-          '#suffix' => '',
-          '#options' => array(
-            'attributes' => array(
-              'class' => array('field-name-field-other-name'),
-              ),
-            'html' => FALSE,
-          ),
-        );
-      }
-      else
-      {
-        $entity->content['full_name_with_url'] = array(
-          '#markup' => $other_name,
-          '#prefix' => '',
-          '#suffix' => '',
-          '#options' => array(
-            'attributes' => array(
-              'class' => array('field-name-field-other-name'),
-              ),
-            'html' => FALSE,
-          ),
-        );
+      // Add extra field that displays linked other_name.
+      $entity->content['full_name_with_url'] = array(
+        '#theme' => 'link',
+        '#text' => $other_name,
+        '#path' => $url,
+        '#prefix' => '',
+        '#suffix' => '',
+        '#options' => array(
+          'attributes' => array(
+            'class' => array('field-name-field-other-name'),
+            ),
+          'html' => FALSE,
+        ),
+      );
+      if (empty($url)) {
+        $entity->content['full_name_with_url']['#markup'] = $other_name;
+        unset($entity->content['full_name_with_url']['#theme']);
       }
     }
   }
