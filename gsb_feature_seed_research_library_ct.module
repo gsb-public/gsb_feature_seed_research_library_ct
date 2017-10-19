@@ -163,6 +163,12 @@ function gsb_feature_seed_research_library_ct_field_extra_fields() {
     'weight' => 1,
   );
 
+  $extra['node']['seed_research_project']['display']['gsb_feature_seed_research_library_ct_award_date'] = array(
+    'label' => t('Award Date'),
+    'description' => t('Award Date'),
+    'weight' => 2,
+  );
+
   return $extra;
 }
 
@@ -203,5 +209,24 @@ function gsb_feature_seed_research_library_ct_entity_view($entity, $type, $view_
         unset($entity->content['full_name_with_url']['#theme']);
       }
     }
+  }
+
+  /**
+   * Award Date
+  */
+  if ($type == 'node' && $entity->type == 'seed_research_project') {
+    // If this field is not configured for this view mode, skip it.
+    $fields = field_extra_fields_get_display('node', $entity->type, $view_mode);
+    if (empty($fields['gsb_feature_seed_research_library_ct_award_date']['visible'])) {
+      return;
+    }
+
+    $wrapper = entity_metadata_wrapper($type, $entity);
+    $award_year = date("Y", ($wrapper->field_year->value()));
+
+    // Add a award-date.
+    $container['award_date'] = array('#markup' => '<h5 class="label-inline">Award Date - </h5><div class="field-name-award-date">' . $wrapper->field_month->label() . ' ' .$award_year. '</div>');
+
+    $entity->content['gsb_feature_seed_research_library_ct_award_date'] = $container;
   }
 }
