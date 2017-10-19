@@ -22,11 +22,8 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'text_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 1,
       ),
     ),
@@ -129,7 +126,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'file',
         'settings' => array(
           'conditions' => array(),
@@ -195,7 +192,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'link',
         'settings' => array(
           'conditions' => array(),
@@ -309,12 +306,12 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'gsb_field_formatter',
+        'module' => 'link',
         'settings' => array(
           'conditions' => array(),
         ),
-        'type' => 'gsb_field_formatter_node_title_link',
-        'weight' => 2,
+        'type' => 'link_default',
+        'weight' => 3,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -530,7 +527,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 3,
+        'weight' => 2,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -616,7 +613,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 3,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -677,7 +674,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 4,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -829,7 +826,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 3,
+        'weight' => 2,
       ),
     ),
     'ds_extras_field_template' => '',
