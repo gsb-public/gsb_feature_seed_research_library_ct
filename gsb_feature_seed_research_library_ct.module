@@ -172,16 +172,15 @@ function gsb_feature_seed_research_library_ct_field_extra_fields() {
  *  - Render referenced entity title from 'field_srl_principal_investigator' field as an extra field.
  */
 function gsb_feature_seed_research_library_ct_entity_view($entity, $type, $view_mode, $langcode) {
-  if ($type == 'field_collection_item' && $entity->field_name == 'field_srl_principal_investigator') {
+  if ($type == 'field_collection_item' && ($entity->field_name == 'field_srl_principal_investigator' || $entity->field_name == 'field_srl_co_investigators')) {
     // If this field is not configured for this view mode, skip it.
     $fields = field_extra_fields_get_display($type, $entity->field_name, $view_mode);
     if (empty($fields['full_name_with_url']['visible'])) {
       return;
     }
 
-    $wrapper = entity_metadata_wrapper($type, $entity);
-
     // get the school_department & link info
+    $wrapper = entity_metadata_wrapper($type, $entity);
     $other_name = $wrapper->field_other_name->value();
     $url = $wrapper->field_link_single->value();
     $url = $url['url'];
@@ -192,8 +191,6 @@ function gsb_feature_seed_research_library_ct_entity_view($entity, $type, $view_
         '#theme' => 'link',
         '#text' => $other_name,
         '#path' => $url,
-        '#prefix' => '',
-        '#suffix' => '',
         '#options' => array(
           'attributes' => array(
             'class' => array('field-name-field-other-name'),
