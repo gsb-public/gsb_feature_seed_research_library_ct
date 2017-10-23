@@ -189,14 +189,13 @@ function gsb_feature_seed_research_library_ct_entity_view($entity, $type, $view_
     $wrapper = entity_metadata_wrapper($type, $entity);
     $other_name = $wrapper->field_other_name->value();
     $url = $wrapper->field_link_single->value();
-    $url = $url['url'];
 
     if ($other_name) {
       // Add extra field that displays linked other_name.
       $entity->content['full_name_with_url'] = array(
         '#theme' => 'link',
         '#text' => $other_name,
-        '#path' => $url,
+        '#path' => $url['url'],
         '#options' => array(
           'attributes' => array(
             'class' => array('field-name-field-other-name'),
@@ -204,9 +203,15 @@ function gsb_feature_seed_research_library_ct_entity_view($entity, $type, $view_
           'html' => FALSE,
         ),
       );
-      if (empty($url)) {
+
+      if (empty($url['url'])) {
         $entity->content['full_name_with_url']['#markup'] = $other_name;
         unset($entity->content['full_name_with_url']['#theme']);
+      }
+      else {
+        if (!empty($url['attributes']['target'])) {
+          $entity->content['full_name_with_url']['#options']['attributes']['target'] = $url['attributes']['target'];
+        }
       }
     }
   }
