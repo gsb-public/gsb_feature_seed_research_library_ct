@@ -26,7 +26,7 @@ function gsb_feature_seed_research_library_ct_panelizer_defaults() {
   $panelizer->title_element = 'H2';
   $panelizer->link_to_entity = TRUE;
   $panelizer->extra = array();
-  $panelizer->pipeline = 'ipe';
+  $panelizer->pipeline = 'standard';
   $panelizer->contexts = array();
   $panelizer->relationships = array();
   $display = new panels_display();
