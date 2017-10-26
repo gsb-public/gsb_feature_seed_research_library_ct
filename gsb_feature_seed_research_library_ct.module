@@ -98,6 +98,18 @@ function gsb_feature_seed_research_library_ct_form_seed_research_project_node_fo
       );
     }
   }
+
+  $form['#attached']['js'] = array(
+    array(
+      'type' => 'file',
+      'data' => drupal_get_path('module', 'gsb_feature_seed_research_library_ct') . '/js/gsb_feature_seed_research_library_ct.js',
+    ),
+    array(
+      'type' => 'setting',
+      'data' => array('gsb_feature_seed_research_library_ct' => array('currentNid' => $form['nid']['#value'])),
+    ),
+  );
+
   $form['#validate'][] = 'gsb_feature_seed_research_library_ct_form_seed_research_project_node_form_validate';
 }
 
