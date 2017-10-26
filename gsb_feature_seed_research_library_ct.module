@@ -235,3 +235,19 @@ function gsb_feature_seed_research_library_ct_entity_view($entity, $type, $view_
     $entity->content['gsb_feature_seed_research_library_ct_award_date'] = $container;
   }
 }
+
+/**
+ * Implements hook_panels_pane_content_alter().
+ */
+function gsb_feature_seed_research_library_ct_panels_pane_content_alter($content, $pane, $args, $contexts) {
+
+  if ($pane->subtype == 'node:field_srl_co_investigators') {
+    $fc_id = $content->content['#items'][0]['value'];
+    $field_other_name = $content->content[0]['entity']['field_collection_item'][$fc_id]['#entity']->field_other_name;
+    $field_person_fac_single_ref = $content->content[0]['entity']['field_collection_item'][$fc_id]['field_person_fac_single_ref'];
+
+    if (empty($field_other_name) && empty($field_person_fac_single_ref)) {
+      $content->content['#access'] = FALSE;
+    }
+  }
+}
