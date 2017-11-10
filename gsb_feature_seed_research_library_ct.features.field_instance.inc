@@ -473,6 +473,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'conditions' => array(),
           'link' => 1,
         ),
@@ -772,6 +773,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'conditions' => array(),
           'link' => 1,
         ),
@@ -1284,6 +1286,62 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-seed_research_project-field_search_field'.
+  $field_instances['node-seed_research_project-field_search_field'] = array(
+    'bundle' => 'seed_research_project',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'concat_field',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'concat_field_blank',
+        'weight' => 17,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_search_field',
+    'label' => 'Search field',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'selected_fields' => array(
+        'concat_field_entity_label' => 'concat_field_entity_label',
+        'field_abstract' => 'field_abstract',
+        'field_award_type' => 'field_award_type',
+        'field_month' => 0,
+        'field_research_locations' => 'field_research_locations',
+        'field_research_results' => 'field_research_results',
+        'field_srl_co_investigators' => 'field_srl_co_investigators',
+        'field_srl_principal_investigator' => 'field_srl_principal_investigator',
+        'field_status' => 0,
+        'field_year' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'concat_field',
+      'settings' => array(),
+      'type' => 'concat_field_default',
+      'weight' => 59,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance:
   // 'node-seed_research_project-field_srl_co_investigators'.
   $field_instances['node-seed_research_project-field_srl_co_investigators'] = array(
@@ -1560,6 +1618,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
   t('Research Results');
   t('School or Department');
   t('School or Department ');
+  t('Search field');
   t('Select Type');
   t('Status');
   t('Title');
