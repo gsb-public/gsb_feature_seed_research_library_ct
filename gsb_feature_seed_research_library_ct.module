@@ -242,7 +242,7 @@ function gsb_feature_seed_research_library_ct_entity_view($entity, $type, $view_
     $award_year = date("Y", ($wrapper->field_year->value()));
 
     // Add a award-date.
-    $container['award_date'] = array('#markup' => '<h5 class="label-inline">Award Date - </h5><div class="field-name-award-date">' . $wrapper->field_month->label() . ' ' .$award_year. '</div>');
+    $container['award_date'] = array('#markup' => '<h5 class="label-inline">Award Date</h5><div class="field-name-award-date">' . $wrapper->field_month->label() . ' ' .$award_year. '</div>');
 
     $entity->content['gsb_feature_seed_research_library_ct_award_date'] = $container;
   }
