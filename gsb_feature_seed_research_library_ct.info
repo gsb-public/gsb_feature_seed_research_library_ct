@@ -2,6 +2,7 @@ name = GSB Feature Seed Research Library Content Type
 core = 7.x
 package = GSB
 version = 7.x-6.22
+dependencies[] = concat_field
 dependencies[] = ctools
 dependencies[] = date
 dependencies[] = entityreference

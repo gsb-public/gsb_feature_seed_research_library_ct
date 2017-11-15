@@ -1002,6 +1002,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'limit_depth' => FALSE,
+          'link_to_term' => TRUE,
           'path_prefix' => 'taxonomy/term/',
           'separator' => ', ',
           'tid_or_name' => 'tid',
@@ -1015,6 +1016,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'limit_depth' => FALSE,
+          'link_to_term' => TRUE,
           'path_prefix' => 'taxonomy/term/',
           'separator' => ', ',
           'tid_or_name' => 'tid',
@@ -1487,6 +1489,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'limit_depth' => FALSE,
+          'link_to_term' => TRUE,
           'path_prefix' => 'taxonomy/term/',
           'separator' => ', ',
           'tid_or_name' => 'tid',
@@ -1500,6 +1503,7 @@ function gsb_feature_seed_research_library_ct_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'limit_depth' => FALSE,
+          'link_to_term' => TRUE,
           'path_prefix' => 'taxonomy/term/',
           'separator' => ', ',
           'tid_or_name' => 'tid',

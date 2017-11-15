@@ -202,12 +202,21 @@ function gsb_feature_seed_research_library_ct_panelizer_defaults() {
   $pane->access = array();
   $pane->configuration = array(
     'label' => 'inline',
-    'formatter' => 'taxonomy_term_reference_plain',
+    'formatter' => 'gsb_field_formatter_path_term_separator',
     'delta_limit' => '0',
     'delta_offset' => '0',
     'delta_reversed' => 0,
     'formatter_settings' => array(
-      'conditions' => array(),
+      'conditions' => array(
+        0 => array(
+          'condition' => '',
+        ),
+      ),
+      'separator' => ', ',
+      'tid_or_name' => 'tid',
+      'path_prefix' => 'taxonomy/term/',
+      'limit_depth' => 0,
+      'link_to_term' => 0,
     ),
     'context' => 'panelizer',
     'override_title' => 0,
