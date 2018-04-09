@@ -76,6 +76,7 @@ features[variable][] = panelizer_defaults_node_seed_research_project
 features[variable][] = panelizer_node:seed_research_project:page_manager_selection
 features[variable][] = panelizer_node:seed_research_project_allowed_layouts
 features[variable][] = panelizer_node:seed_research_project_allowed_layouts_default
+features[variable][] = panelizer_node:seed_research_project_allowed_types
 features[variable][] = panelizer_node:seed_research_project_allowed_types_default
 features[variable][] = panelizer_node:seed_research_project_default
 features[variable][] = pathauto_node_seed_research_project_pattern
